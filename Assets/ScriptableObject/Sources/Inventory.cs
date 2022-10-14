@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private Action<Item> onItemAdded;
+    public Action<Item> onItemAdded;
     [SerializeField] List<Item> StartItems = new List<Item>();
 
     public List<Item> InventoryItems { get; private set; }
@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    void AddItem(Item item)
+    public void AddItem(Item item)
     {
         InventoryItems.Add(item);
         onItemAdded?.Invoke(item);

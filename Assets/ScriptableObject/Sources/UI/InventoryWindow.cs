@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +7,7 @@ public class InventoryWindow : MonoBehaviour
     [SerializeField] Inventory targetInventory;
     [SerializeField] RectTransform itemsPanel;
 
+    List<GameObject> drawIcons = new List<GameObject>();
     void Start()
     {
         targetInventory.onItemAdded += OnItemAdded;
@@ -18,6 +18,8 @@ public class InventoryWindow : MonoBehaviour
 
     void Redraw()
     {
+        ClearDrawn();
+
         for (var i = 0; i < targetInventory.InventoryItems.Count; i++)
         {
             var item = targetInventory.InventoryItems[i];
@@ -28,6 +30,18 @@ public class InventoryWindow : MonoBehaviour
             icon.transform.SetParent(itemsPanel);
 
             icon.transform.SetParent(itemsPanel);
+
+            drawIcons.Add(icon);
         }
+    }
+
+    void ClearDrawn()
+    {
+        for (var i = 0; i<drawIcons.Count; i++)
+        {
+            Destroy(drawIcons[i]);
+            
+        }
+        drawIcons.Clear();
     }
 }
