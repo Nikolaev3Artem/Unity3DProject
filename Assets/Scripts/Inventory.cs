@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
         OpenCloseInv();
     }
 
@@ -50,11 +50,15 @@ public class Inventory : MonoBehaviour
             {
                 invOpener.SetActive(false);
                 TF = false;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
                 invOpener.SetActive(true);
                 TF = true;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
