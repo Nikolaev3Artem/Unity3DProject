@@ -5,7 +5,7 @@ public class BaseCharacterRotation : MonoBehaviour
     [SerializeField]
     protected float smoothForCharacter = 10;
     [SerializeField]
-    protected float smoothForCamera = 8.5f;
+    protected float smoothForCamera = 5;
     [SerializeField]
     protected float rotationSpeed = 0.5f;
     [SerializeField]
