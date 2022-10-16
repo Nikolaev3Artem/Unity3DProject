@@ -8,7 +8,7 @@ public class ItemTaker : MonoBehaviour
     [SerializeField] Inventory targetInventory;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             targetInventory.AddItem(itemToAdd);
         }

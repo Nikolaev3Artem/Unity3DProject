@@ -10,8 +10,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] List<Item> StartItems = new List<Item>();
 
     public bool TF = true;
+    public int InventorySize = 70;
 
-    public GameObject obj;
+    public GameObject invOpener;
     public List<Item> InventoryItems { get; private set; }
 
 
@@ -33,22 +34,26 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        InventoryItems.Add(item);
-        onItemAdded?.Invoke(item);
+        if (InventoryItems.Count < InventorySize)
+        {
+            InventoryItems.Add(item);
+            onItemAdded?.Invoke(item);
+        }
+
     }
 
     public void OpenCloseInv()
     {
-        if (Input.GetKeyUp(KeyCode.T))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             if (TF == true)
             {
-                obj.SetActive(false);
+                invOpener.SetActive(false);
                 TF = false;
             }
-            else if(TF == false)
+            else
             {
-                obj.SetActive(true);
+                invOpener.SetActive(true);
                 TF = true;
             }
         }
