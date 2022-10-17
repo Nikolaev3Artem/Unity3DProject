@@ -791,8 +791,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 10645e95a9c6dac4c994eff825984384, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -844,7 +844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1830129072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -863,8 +863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 250}
-  m_SizeDelta: {x: 560, y: 420}
+  m_AnchoredPosition: {x: -50, y: 260}
+  m_SizeDelta: {x: 490, y: 420}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1830129073
 MonoBehaviour:
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1213,6 +1213,7 @@ GameObject:
   - component: {fileID: 5866666020570073388}
   - component: {fileID: 5866666020570073387}
   - component: {fileID: 5866666020570073389}
+  - component: {fileID: 5866666020570073390}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2544,7 +2545,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bed5e64239621d14f9e216820206e366, type: 2}
   - {fileID: 11400000, guid: 9aa5a2e06c6ecf740a4ead41e69edc27, type: 2}
   TF: 1
-  InventorySize: 48
+  InventorySize: 42
   invOpener: {fileID: 239327614}
 --- !u!114 &5866666020570073386
 MonoBehaviour:
@@ -2558,8 +2559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc02401d20edc9498f05fa18d3edcb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToAdd: {fileID: 11400000, guid: bed5e64239621d14f9e216820206e366, type: 2}
+  itemToAdd: {fileID: 11400000, guid: 271967933d19c854bbc98a63ee9fb41e, type: 2}
   targetInventory: {fileID: 5866666020570073385}
+  picking: 0
 --- !u!114 &5866666020570073387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,6 +2604,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43773127, y: 1.802695, z: 0.39591908}
   m_Center: {x: 0.009004593, y: 0.91184473, z: -0.004679978}
+--- !u!114 &5866666020570073390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148351535589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d276429b35a03ab4fa1d7e868ca03113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!4 &5901452234454450652
 Transform:
   m_ObjectHideFlags: 0

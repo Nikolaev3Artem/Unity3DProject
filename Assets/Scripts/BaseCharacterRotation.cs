@@ -2,18 +2,12 @@ using UnityEngine;
 
 public class BaseCharacterRotation : MonoBehaviour
 {
-    [SerializeField]
-    protected float smoothForCharacter = 10;
-    [SerializeField]
-    protected float smoothForCamera = 5;
-    [SerializeField]
-    protected float rotationSpeed = 0.5f;
-    [SerializeField]
-    protected Transform character;
+    [SerializeField] protected float smoothForCharacter = 10;
+    [SerializeField] protected float smoothForCamera = 5;
+    [SerializeField] protected float rotationSpeed = 0.5f;
+    [SerializeField] protected Transform character;
     protected float yRotation;
     protected float xRotation;
-    protected float yMRotation;
-    protected float xMRotation;
 
     private void Start()
     {
