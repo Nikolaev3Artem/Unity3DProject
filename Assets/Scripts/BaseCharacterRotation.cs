@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BaseCharacterRotation : MonoBehaviour
 {
+    [SerializeField] protected float sensitivity = 1.5f;
     [SerializeField] protected float smoothForCharacter = 10;
     [SerializeField] protected float smoothForCamera = 5;
     [SerializeField] protected float rotationSpeed = 0.5f;
@@ -17,8 +18,8 @@ public class BaseCharacterRotation : MonoBehaviour
 
     protected void Update()
     {
-        yRotation += Input.GetAxis("Horizontal") * rotationSpeed;
-        xRotation = Input.GetAxis("Vertical") * rotationSpeed;
+        yRotation += Input.GetAxis("Mouse X") * sensitivity;
+        xRotation -= Input.GetAxis("Mouse Y") * sensitivity;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
@@ -28,7 +29,7 @@ public class BaseCharacterRotation : MonoBehaviour
     {
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(xRotation, yRotation, 0), Time.deltaTime * smoothForCharacter);
-        character.rotation = Quaternion.Lerp(character.rotation, Quaternion.Euler(0, yRotation, 0), Time.deltaTime * smoothForCamera);
-        
+        character.rotation = Quaternion.Lerp(character.rotation, Quaternion.Euler(0, yRotation, 0), Time.deltaTime * smoothForCharacter);
+
     }
 }
